@@ -1,0 +1,6 @@
+{
+  user_id: answer.user_id,
+  answerable_id: answer.answerable_id,
+  answerable_type: answer.answerable_type,
+  content: answer.content
+}

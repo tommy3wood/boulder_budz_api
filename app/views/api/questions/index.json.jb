@@ -1,0 +1,3 @@
+@questions.map do |question|
+  render partial: 'questions.json.jb', locals:{question: question}
+end
