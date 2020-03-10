@@ -16,7 +16,7 @@ class Api::AnswersController < ApplicationController
     if @answer.save
       render 'show.json.jb'
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: @answer.errors.full_messages}, status: :bad_request
     end
   end
 
@@ -30,11 +30,12 @@ class Api::AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
 
     @answer.content = params[:content] || @answer.content
+    @answer.answerable_id = params[:answerable_id] || @answer.answerable_id
 
     if @answer.save
       render 'show.json.jb'
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: @answer.errors.full_messages}, status: :bad_request
     end
   end
 

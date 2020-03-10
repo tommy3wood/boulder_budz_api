@@ -1,6 +1,9 @@
 {
+  id: answer.id,
   user_id: answer.user_id,
+  answer_op: answer.user.email,
   answerable_id: answer.answerable_id,
   answerable_type: answer.answerable_type,
-  content: answer.content
+  content: answer.content,
+  parent_route: answer.parent_route
 }

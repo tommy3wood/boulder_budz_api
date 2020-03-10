@@ -1,8 +1,9 @@
 {
-  # id: question.id,
+  id: question.id,
   op: question.user.email,
   user_id: question.user_id,
   category: question.category,
   title: question.title,
-  content: question.content
+  content: question.content,
+  answers: question.answers,
 }

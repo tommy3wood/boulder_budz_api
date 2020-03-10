@@ -16,8 +16,9 @@ class Api::QuestionsController < ApplicationController
     if @question.save
       render 'show.json.jb'
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: @question.errors.full_messages}, status: :bad_request
     end
+  
   end
 
   def show
@@ -35,7 +36,7 @@ class Api::QuestionsController < ApplicationController
     if @question.save
       render 'show.json.jb'
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: @question.errors.full_messages}, status: :bad_request
     end
   end
 
