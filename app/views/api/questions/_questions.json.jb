@@ -6,4 +6,5 @@
   title: question.title,
   content: question.content,
   answers: question.answers,
+  answer_op: question.op_emailsz
 }

@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     get '/answers/:id' => 'answers#show'
     patch '/answers/:id' => 'answers#update'
     delete '/answers/:id' => 'answers#destroy'
+
+    post '/sessions' => 'sessions#create'
   end
 end
