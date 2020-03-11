@@ -5,5 +5,6 @@
   answerable_id: answer.answerable_id,
   answerable_type: answer.answerable_type,
   content: answer.content,
-  parent_route: answer.parent_route
+  parent_route: answer.parent_route,
+  answers: answer.answers.map { |nested_answer| render partial: 'api/answers/answer.json.jb', locals: { answer: nested_answer } }
 }

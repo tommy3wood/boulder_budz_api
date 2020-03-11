@@ -5,6 +5,5 @@
   category: question.category,
   title: question.title,
   content: question.content,
-  answers: question.answers,
-  answer_op: question.op_emailsz
+  answers: question.answers.map { |answer| render partial: "api/answers/answer.json.jb", locals: { answer: answer } }
 }

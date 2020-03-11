@@ -8,7 +8,7 @@ class Api::AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(
-                          user_id: params[:user_id],
+                          user_id: current_user.id,
                           answerable_id: params[:answerable_id],
                           answerable_type: params[:answerable_type],
                           content: params[:content]

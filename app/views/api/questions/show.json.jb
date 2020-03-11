@@ -1,1 +1,1 @@
-render partial: 'questions.json.jb', locals:{question: @question}
+render partial: 'question.json.jb', locals:{question: @question}

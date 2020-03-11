@@ -8,12 +8,11 @@ class Question < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
-  def op_email
-    emails = []
-    self.answers.each do |answer|
-      emails << answer.user.email
-    end
-    emails
-  end
+ def answer_op
+  answers = Question.answers
+  
+  
+  
+ end
 
 end
