@@ -11,7 +11,8 @@ class Api::AnswersController < ApplicationController
                           user_id: current_user.id,
                           answerable_id: params[:answerable_id],
                           answerable_type: params[:answerable_type],
-                          content: params[:content]
+                          content: params[:content],
+                          image: params[:image]
                           )
     if @answer.save
       render 'show.json.jb'

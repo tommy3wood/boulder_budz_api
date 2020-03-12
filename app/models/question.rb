@@ -1,6 +1,7 @@
 class Question < ApplicationRecord
   has_many :answers, as: :answerable
   belongs_to :user
+  has_one_attached :image
 
   enum category: {advice: 0, beta_room: 1, gear_room: 2, app_feedback: 3}
 

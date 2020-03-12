@@ -1,4 +1,4 @@
-{
+result = {
   id: question.id,
   op: question.user.email,
   user_id: question.user_id,
@@ -7,3 +7,9 @@
   content: question.content,
   answers: question.answers.map { |answer| render partial: "api/answers/answer.json.jb", locals: { answer: answer } }
 }
+
+if question.image.attachment
+  result[:image_url] = rails_blob_url(question.image)
+end
+
+result

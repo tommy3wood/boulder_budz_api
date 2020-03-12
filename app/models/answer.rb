@@ -2,6 +2,7 @@ class Answer < ApplicationRecord
   belongs_to :user
   belongs_to :answerable, polymorphic: true
   has_many :answers, as: :answerable
+  has_one_attached :image
  
 
   # has_many :votes

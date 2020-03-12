@@ -8,10 +8,11 @@ class Api::QuestionsController < ApplicationController
 
   def create
     @question = Question.new(
-                            user_id: 1,
+                            user_id: current_user.id,
                             category: params[:category],
                             title: params[:title],
-                            content: params[:content]
+                            content: params[:content],
+                            image: params[:image]
                             )
     if @question.save
       render 'show.json.jb'
