@@ -19,5 +19,8 @@ Rails.application.routes.draw do
     delete '/answers/:id' => 'answers#destroy'
 
     post '/sessions' => 'sessions#create'
+
+    get '/votes' => 'votes#index'
+    post '/votes' => 'votes#create'
   end
 end
