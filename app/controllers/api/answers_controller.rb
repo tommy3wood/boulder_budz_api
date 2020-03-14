@@ -14,6 +14,7 @@ class Api::AnswersController < ApplicationController
                           content: params[:content],
                           image: params[:image]
                           )
+    
     if @answer.save
       render 'show.json.jb'
     else

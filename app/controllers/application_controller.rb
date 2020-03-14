@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
           nil
         end
       end
-    end
+  end
 
     helper_method :current_user
 

@@ -1,4 +1,4 @@
-{
+result = {
   id: answer.id,
   user_id: answer.user_id,
   answer_op: answer.user.email,
@@ -8,3 +8,9 @@
   parent_route: answer.parent_route,
   answers: answer.answers.map { |nested_answer| render partial: 'api/answers/answer.json.jb', locals: { answer: nested_answer } }
 }
+
+if answer.image.attachment
+  result[:image_url] = rails_blob_url(answer.image)
+end
+
+result
