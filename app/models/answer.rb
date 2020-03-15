@@ -22,4 +22,9 @@ class Answer < ApplicationRecord
     route
   end
 
+  def vote_count
+    count = self.votes.where(:positive => true).count - self.votes.where(:positive => false).count
+    count
+  end
+
 end

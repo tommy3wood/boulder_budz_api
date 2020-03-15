@@ -6,7 +6,10 @@ result = {
   answerable_type: answer.answerable_type,
   content: answer.content,
   parent_route: answer.parent_route,
-  answers: answer.answers.map { |nested_answer| render partial: 'api/answers/answer.json.jb', locals: { answer: nested_answer } }
+  answers: answer.answers.map { |nested_answer| render partial: 'api/answers/answer.json.jb', locals: { answer: nested_answer } },
+  vote_count: answer.vote_count,
+  upvotes: answer.votes.where(positive: true).count,
+  downvotes: answer.votes.where(positive: false).count
 }
 
 if answer.image.attachment
