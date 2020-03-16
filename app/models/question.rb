@@ -11,9 +11,6 @@ class Question < ApplicationRecord
 
  def answer_op
   answers = Question.answers
-  
-  
-  
  end
 
 end

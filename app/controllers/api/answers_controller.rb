@@ -2,7 +2,6 @@ class Api::AnswersController < ApplicationController
 
   def index
     @answers = Answer.all
-
     render 'index.json.jb'
   end
 
@@ -14,7 +13,6 @@ class Api::AnswersController < ApplicationController
                           content: params[:content],
                           image: params[:image]
                           )
-    
     if @answer.save
       render 'show.json.jb'
     else

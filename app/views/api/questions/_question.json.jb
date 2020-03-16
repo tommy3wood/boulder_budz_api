@@ -5,7 +5,8 @@ result = {
   category: question.category,
   title: question.title,
   content: question.content,
-  answers: question.answers.map { |answer| render partial: "api/answers/answer.json.jb", locals: { answer: answer } }
+  answers: question.answers.map { |answer| render partial: "api/answers/answer.json.jb", locals: { answer: answer } },
+  created_at: question.created_at
 }
 
 if question.image.attachment
