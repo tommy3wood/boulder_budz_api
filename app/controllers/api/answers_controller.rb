@@ -14,6 +14,10 @@ class Api::AnswersController < ApplicationController
                           image: params[:image]
                           )
     if @answer.save
+      TwilioClient.new.send_text(
+                                 @answer.answerable.user, 
+                                 "#{@answer.user.email} has replied to you on Boulder Budz"
+                                 )
       render 'show.json.jb'
     else
       render json: {errors: @answer.errors.full_messages}, status: :bad_request
