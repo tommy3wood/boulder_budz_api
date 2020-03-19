@@ -1,5 +1,6 @@
 {
   user_id: vote.user_id,
   answer_id: vote.answer_id,
-  positive: vote.positive
+  positive: vote.positive,
+  # total: vote.answer.vote_count
 }
