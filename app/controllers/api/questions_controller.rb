@@ -43,6 +43,7 @@ class Api::QuestionsController < ApplicationController
 
   def destroy
     question = Question.find(params[:id])
+    # question.answers.destroy
     question.destroy
     render json: {message: "SUCCESSFULLY DESTROYED QUESTION"}
   end

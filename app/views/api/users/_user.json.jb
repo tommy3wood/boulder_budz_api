@@ -4,5 +4,7 @@
   phone: user.phone,
   bio: user.bio,
   home_crag: user.home_crag,
-  location: user.location
+  location: user.location,
+  user_questions: user.questions,
+  user_answers: user.answers
 }

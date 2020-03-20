@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
   has_many :answers, as: :answerable
   has_many :votes
   has_one_attached :image
- 
+  # default_scope { order("vote_count DESC") }
 
   # has_many :votes
 
