@@ -1,5 +1,6 @@
 class Api::AnswersController < ApplicationController
-
+  before_action :authenticate_user, only: [:update, :destroy]
+  
   def index
     @answers = Answer.all
     render 'index.json.jb'

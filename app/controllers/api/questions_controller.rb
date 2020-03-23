@@ -1,5 +1,6 @@
 class Api::QuestionsController < ApplicationController
-
+  before_action :authenticate_user, only: [:update, :destroy]
+  
   def index
     @questions = Question.all
 

@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
-  
+  before_action :authenticate_user, only: [:update, :destroy]
+
   def index
     @users = User.all
 
