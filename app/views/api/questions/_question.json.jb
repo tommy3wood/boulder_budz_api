@@ -3,7 +3,7 @@ result = {
   op: question.user.email,
   user_id: question.user_id,
   category: question.category,
-  title: question.title,
+  title: question.title.upcase,
   content: question.content,
   answers: question.answers.map { |answer| render partial: "api/answers/answer.json.jb", locals: { answer: answer } },
   created_at: question.created_at
