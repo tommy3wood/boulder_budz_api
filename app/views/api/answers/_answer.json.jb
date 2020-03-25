@@ -10,7 +10,10 @@ result = {
   vote_count: answer.vote_count,
   upvotes: answer.votes.where(positive: true).count,
   downvotes: answer.votes.where(positive: false).count,
-  sub_answers_total: answer.answers.length
+  sub_answers_total: answer.answers.length,
+  created_at: answer.created_at,
+  context: answer.answerable.content,
+  answerable_image: answer.answerable.image
 }
 
 if answer.image.attachment

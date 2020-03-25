@@ -6,7 +6,11 @@ result = {
   title: question.title.upcase,
   content: question.content,
   answers: question.answers.map { |answer| render partial: "api/answers/answer.json.jb", locals: { answer: answer } },
-  created_at: question.created_at
+  created_at: question.created_at,
+  advice_count: Question.where(category: "advice").length,
+  beta_room_count: Question.where(category: "beta_room").length,
+  gear_room_count:Question.where(category: "gear_room").length,
+  app_feedback_count: Question.where(category: "app_feedback").length
 }
 
 if question.image.attachment
