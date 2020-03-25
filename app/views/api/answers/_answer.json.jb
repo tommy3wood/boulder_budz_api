@@ -9,7 +9,8 @@ result = {
   answers: answer.answers.map { |nested_answer| render partial: 'api/answers/answer.json.jb', locals: { answer: nested_answer } },
   vote_count: answer.vote_count,
   upvotes: answer.votes.where(positive: true).count,
-  downvotes: answer.votes.where(positive: false).count
+  downvotes: answer.votes.where(positive: false).count,
+  sub_answers_total: answer.answers.length
 }
 
 if answer.image.attachment
